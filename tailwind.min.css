@@ -179577,9 +179577,9 @@ video {
 }
 
 h3 {
-    color: #1d4ed8;
+    color: rgb(99, 102, 241 ,1);
     font-size: larger;
-    font-family: cursive;
+    font-weight: bold;
 }
 
 #gym-membership-form input[type="text"],
