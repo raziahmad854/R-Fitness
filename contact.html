@@ -11,9 +11,9 @@
     <div class="container mx-auto p-6">
         <h1 class="text-3xl font-bold text-center mb-6">Contact Us</h1>
         <div class="bg-white rounded shadow-lg p-6">
-            <!-- Confirmation Message from AI Agent -->
             <p class="text-lg text-green-600 mb-4">
-                We have received your message! While you wait for our reply, answer a few questions from our AI agent.
+                We have received your message! While you wait for our reply, answer a few questions to help us know you
+                better.
             </p>
 
             <!-- Quiz Section -->
@@ -34,8 +34,16 @@
                     <label for="trainDays" class="block text-gray-700 font-medium mb-2">
                         2. How many days per week do you train?
                     </label>
-                    <input type="number" id="trainDays" placeholder="e.g., 3"
-                        class="w-full p-2 border border-gray-300 rounded">
+                    <select id="trainDays" class="w-full p-2 border border-gray-300 rounded">
+                        <option value="">-- Select days --</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
                 </div>
                 <div>
                     <label for="workoutType" class="block text-gray-700 font-medium mb-2">
@@ -53,7 +61,6 @@
                     Generate Requirement Sheet
                 </button>
             </form>
-
             <!-- Custom Requirement Sheet Section -->
             <div id="requirementSection" class="mt-6 hidden">
                 <h2 class="text-2xl font-bold mb-4">Your Custom Requirement Sheet</h2>
@@ -100,9 +107,13 @@ Recommendations:\n
 
         const sendCustomReqBtn = document.getElementById('sendCustomReqBtn');
         sendCustomReqBtn.addEventListener('click', () => {
-            // Here you can send the custom requirement sheet to your backend via AJAX.
-            // For demo purposes, we'll simply show an alert.
             alert('Your custom requirement sheet has been sent!');
+            // Clear the quiz form fields
+            quizForm.reset();
+            // Clear the custom requirement textarea
+            requirementText.value = '';
+            // Hide the requirement section
+            requirementSection.classList.add('hidden');
         });
     </script>
 </body>
